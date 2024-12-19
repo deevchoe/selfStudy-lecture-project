@@ -1,3 +1,19 @@
+@media (max-width: 880px) {
+  h1 {
+    font-family: "Black And White Picture", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 4rem;
+    top: 2% !important; /* 상단에서의 거리 */
+    left: 10% !important;
+    color: #333; /* 글씨 색상 조정 */
+  }
+
+  .container {
+    width: 90%; /* 모바일 화면에 맞게 너비 조정 */
+  }
+}
+
 body {
   background-image: url(images/game.jpg);
   background-size: cover;
