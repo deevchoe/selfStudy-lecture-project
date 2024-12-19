@@ -136,17 +136,19 @@ input[type="number"] {
     font-family: "Black And White Picture", serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 4rem;
+    font-size: 3rem;
     top: 2% !important; /* 상단에서의 거리 */
+    text-align: center !important;
     color: #333; /* 글씨 색상 조정 */
   }
 
   .container {
-    width: 90%; /* 박스를 화면 너비에 맞춤 */
-    margin-top: 0; /* 추가 상단 간격 제거 */
-    padding: 15px; /* 내부 여백 조정 */
-    box-sizing: border-box; /* 박스 크기 계산 */
-    background: rgba(255, 255, 255, 0.9); /* 흰색 배경 투명도 약간 추가 */
+    width: 128%; /* 박스 너비를 화면 폭의 95%로 조정 */
+    max-width: 500px; /* 최대 너비를 설정해 너무 넓어지지 않게 */
+    margin-top: 0;
+    padding: 15px;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.9);
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   }
