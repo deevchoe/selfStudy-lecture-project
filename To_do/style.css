@@ -40,6 +40,13 @@ body {
 }
 
 .menu-tabs a {
+  font-family: "Gowun Batang", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-family: "Gowun Batang", serif;
+  font-weight: 400;
+  font-style: normal;
+
   text-decoration: none;
   color: black;
   flex: 1;
@@ -62,11 +69,15 @@ body {
 }
 
 .task {
+  font-family: "Gowun Batang", serif;
+  font-weight: 400;
+  font-style: normal;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1em;
-  background-color: #fff0f5; /* 연한 핑크 배경 */
+  background-color: rgba(255, 240, 245, 0.5); /* 연한 핑크 + 50% 투명도 */
   border-radius: 8px; /* 둥근 모서리 */
   margin-bottom: 10px; /* 각 항목 간 간격 */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 가벼운 그림자 */
