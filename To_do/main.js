@@ -139,6 +139,17 @@ menu.forEach((menu) =>
   menu.addEventListener("click", (e) => menusIndicator(e))
 );
 
+document.addEventListener("DOMContentLoaded", () => {
+  const defaultTab = document.getElementById("all"); // "모두" 탭의 ID
+  underLine.style.left = defaultTab.offsetLeft + "px"; // "모두" 탭의 왼쪽 위치
+  underLine.style.width = defaultTab.offsetWidth + "px"; // "모두" 탭의 너비
+  underLine.style.top =
+    defaultTab.offsetTop +
+    defaultTab.offsetHeight -
+    underLine.offsetHeight +
+    "px"; // "모두" 탭의 하단 선 바로 위
+});
+
 function menusIndicator(e) {
   underLine.style.left = e.currentTarget.offsetLeft + "px"; // 메뉴의 시작 위치
   underLine.style.width = e.currentTarget.offsetWidth + "px"; // 메뉴의 너비
