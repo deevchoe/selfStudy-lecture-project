@@ -110,7 +110,7 @@ h1 {
 .input-area {
   display: flex;
   align-items: center;
-  border-bottom: 2px solid #ff69b4; /* 핑크색 아래 선 */
+  border-bottom: 2px solid #ff98a8; /* 핑크색 아래 선 */
   padding: 5px 0;
   position: relative; /* 버튼 위치를 조정하기 위해 필요 */
   margin-bottom: 7px;
@@ -131,7 +131,7 @@ h1 {
   border: none;
   background: none;
   font-size: 25px; /* '+' 크기 */
-  color: #ff69b4; /* 핑크색 */
+  color: #ff98a8; /* 핑크색 */
   cursor: pointer;
   padding: 0;
 }
@@ -181,7 +181,7 @@ h1 {
   }
 
   .task-tabs a {
-    font-size: 4px; /* 텍스트 크기 줄이기 */
+    font-size: 1px; /* 텍스트 크기 줄이기 */
     padding: 0.5em 0;
   }
 
