@@ -1,0 +1,162 @@
+body {
+  margin: 0px;
+  height: 100vh;
+  background-image: url("images/background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  margin: 50px;
+  background-color: rgba(255, 255, 255, 0.7);
+  min-height: 80vh;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+.task-area {
+  border: 2px solid #ffdff0; /* 핑크 테두리 */
+  border-radius: 10px; /* 둥근 모서리 */
+  padding: 15px;
+  background-color: rgba(255, 240, 245, 0.5); /* 연한 핑크 배경 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 부드러운 그림자 */
+  margin-bottom: 15px;
+  height: 60vh; /* 최대 높이를 지정 */
+  overflow-y: auto; /* 높이를 넘어서면 세로 스크롤 활성화 */
+  scrollbar-width: inherit; /* 스크롤바 얇게 */
+  scrollbar-color: #ff98a8 transparent; /* 스크롤 색상 */
+}
+
+.menu-tabs {
+  display: flex; /* 가로로 배치 */
+  justify-content: space-around; /* 탭 간 일정 간격 배치 */
+  border-bottom: 2px solid #ff98a8; /* 핑크 하단 테두리 */
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.menu-tabs a {
+  text-decoration: none;
+  color: black;
+  flex: 1;
+  text-align: center;
+  padding: 1em;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#under-line {
+  position: absolute;
+  width: 0;
+  background-color: #ff98a8;
+  top: 0;
+  left: 0;
+  height: 2px;
+  transition: 0.3s; /* 부드러운 이동 */
+}
+
+.task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+  background-color: #fff0f5; /* 연한 핑크 배경 */
+  border-radius: 8px; /* 둥근 모서리 */
+  margin-bottom: 10px; /* 각 항목 간 간격 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 가벼운 그림자 */
+}
+.task div:first-child {
+  display: flex;
+  align-items: center; /* 체크박스와 텍스트 수직 가운데 정렬 */
+}
+
+.task:hover {
+  background-color: #fceef0; /* 호버 시 연한 핑크 강조 */
+}
+
+.task-done {
+  text-decoration: line-through;
+  color: #d3d3d3; /* 완료된 항목은 회색 */
+}
+
+h1 {
+  font-family: "Lugrasimo", serif;
+  font-weight: 400;
+  font-style: normal;
+
+  margin: 5vh;
+  text-align: center;
+  font-size: 40px;
+}
+
+/* gpt */
+.input-area {
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid #ff69b4; /* 핑크색 아래 선 */
+  padding: 5px 0;
+  position: relative; /* 버튼 위치를 조정하기 위해 필요 */
+  margin-bottom: 7px;
+}
+
+#task-input {
+  flex: 1; /* input이 가능한 한 너비를 차지하도록 설정 */
+  border: none;
+  outline: none;
+  font-size: 16px;
+  padding: 5px;
+  background: none; /* 투명 배경 */
+}
+
+#add-button {
+  position: absolute;
+  right: 0; /* 버튼을 라인의 맨 끝으로 이동 */
+  border: none;
+  background: none;
+  font-size: 25px; /* '+' 크기 */
+  color: #ff69b4; /* 핑크색 */
+  cursor: pointer;
+  padding: 0;
+}
+
+.task input[type="checkbox"] {
+  -webkit-appearance: none; /* 기본 체크박스 제거 */
+  -moz-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #e6ccd0;
+  border-radius: 4px; /* 약간 둥근 모서리 */
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  background-color: #fff0f5; /* 연한 핑크 배경 */
+  transition: all 0.3s ease-in-out;
+  margin-right: 10px;
+}
+
+.task input[type="checkbox"]:checked {
+  background-color: rgba(255, 105, 180, 0.3); /* 진한 핑크 + 투명도 */
+  /* border-color: rgba(255, 105, 180, 0.7); 테두리도 동일한 투명 핑크 */
+}
+
+.task input[type="checkbox"]:focus {
+  outline: 2px solid #ff69b4; /* 포커스 시 강조 */
+}
+
+.delete-icon {
+  width: 23px; /* 이미지 크기 조정 */
+  height: 23px;
+  cursor: pointer; /* 커서 모양을 손가락으로 변경 */
+  transition: transform 0.2s ease-in-out; /* 클릭 시 애니메이션 효과 */
+}
+
+.delete-icon:active {
+  transform: scale(0.9); /* 클릭 시 살짝 축소 */
+}
