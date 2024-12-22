@@ -171,3 +171,33 @@ h1 {
 .delete-icon:active {
   transform: scale(0.9); /* 클릭 시 살짝 축소 */
 }
+@media (max-width: 480px) {
+  .container {
+    margin: 50px;
+    background-color: rgba(255, 255, 255, 0.7);
+    min-height: 90vh;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+      rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  }
+
+  .task-tabs a {
+    font-size: 4px; /* 텍스트 크기 줄이기 */
+    padding: 0.5em 0;
+  }
+
+  .task-area {
+    padding: 5px;
+    height: 600px;
+  }
+
+  .task {
+    padding: 0.5em;
+    margin-bottom: 5px;
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 24px;
+    margin: 20px 0;
+  }
+}
