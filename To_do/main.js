@@ -141,21 +141,44 @@ menu.forEach((menu) =>
 
 document.addEventListener("DOMContentLoaded", () => {
   const defaultTab = document.getElementById("all"); // "모두" 탭의 ID
-  underLine.style.left = defaultTab.offsetLeft + "px"; // "모두" 탭의 왼쪽 위치
-  underLine.style.width = defaultTab.offsetWidth + "px"; // "모두" 탭의 너비
-  underLine.style.top =
-    defaultTab.offsetTop +
-    defaultTab.offsetHeight -
-    underLine.offsetHeight +
-    "px"; // "모두" 탭의 하단 선 바로 위
-});
+  const underLine = document.getElementById("under-line"); // 밑줄 요소
 
-function menusIndicator(e) {
-  underLine.style.left = e.currentTarget.offsetLeft + "px"; // 메뉴의 시작 위치
-  underLine.style.width = e.currentTarget.offsetWidth + "px"; // 메뉴의 너비
-  underLine.style.top =
-    e.currentTarget.offsetTop +
-    e.currentTarget.offsetHeight -
-    underLine.offsetHeight +
-    "px"; // 하단 선 바로 위로 배치
-}
+  // 초기 설정: "모두" 탭에 맞게 밑줄 위치와 크기 설정
+  updateUnderline(defaultTab);
+
+  // 메뉴 클릭 시 밑줄 위치와 크기 업데이트
+  const menuTabs = document.querySelectorAll(".menu-tabs a");
+  menuTabs.forEach((tab) => {
+    tab.addEventListener("click", (e) => {
+      menusIndicator(e);
+    });
+  });
+
+  // 브라우저 크기 변경 시 밑줄 위치와 크기 업데이트
+  window.addEventListener("resize", () => {
+    const activeTab = document.querySelector(".menu-tabs a.active");
+    if (activeTab) {
+      updateUnderline(activeTab);
+    } else {
+      updateUnderline(defaultTab);
+    }
+  });
+
+  // 밑줄 업데이트 함수
+  function updateUnderline(tab) {
+    underLine.style.left = tab.offsetLeft + "px";
+    underLine.style.width = tab.offsetWidth + "px";
+    underLine.style.top =
+      tab.offsetTop + tab.offsetHeight - underLine.offsetHeight + "px";
+  }
+
+  // 메뉴 클릭 시 호출되는 함수
+  function menusIndicator(e) {
+    const targetTab = e.currentTarget;
+    updateUnderline(targetTab);
+
+    // 기존 active 클래스 제거 후 새로 추가
+    menuTabs.forEach((tab) => tab.classList.remove("active"));
+    targetTab.classList.add("active");
+  }
+});
